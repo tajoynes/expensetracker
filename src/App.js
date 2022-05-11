@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { Container } from "semantic-ui-react";
+import "./App.css";
+import { AddTransaction } from "./components/AddTransaction";
+import { Balance } from "./components/Balance";
+import { HeaderTitle } from "./components/Header";
+import { IncomeExpense } from "./components/IncomeExpense";
+import { TransactionList } from "./components/TransactionList";
+
+import { GlobalProvider } from "./context/GlobalState";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <GlobalProvider>
+      <Container
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          padding: 20,
+        }}
+      >
+        <HeaderTitle />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Balance />
+          <IncomeExpense />
+          <TransactionList />
+          <AddTransaction />
+        </div>
+      </Container>
+    </GlobalProvider>
   );
 }
 
