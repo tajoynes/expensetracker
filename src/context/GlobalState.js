@@ -3,11 +3,7 @@ import AppReducer from "./AppReducer";
 
 //Initial Global State
 const initialState = {
-  transactions: [
-    { id: 1, text: "Flower", amount: -20 },
-    { id: 2, text: "Income", amount: 180 },
-    { id: 3, text: "Grocery", amount: -50 },
-  ],
+  transactions: [],
 };
 
 // Create context
